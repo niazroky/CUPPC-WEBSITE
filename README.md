@@ -28,7 +28,7 @@ The project structure includes the following main components:
 
 To run the project locally, follow these steps:
 
-1. Clone the repository in the local directory (local directory name is'CUPPC WEBSITE'):
+1. Clone the repository in the local directory (local directory name is 'CUPPC WEBSITE'):
 git clone <https://github.com/niazroky/CUPPC-WEBSITE.git>
 
 2. Set up a virtual environment (recommended):
