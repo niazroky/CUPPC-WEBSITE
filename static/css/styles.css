@@ -1,0 +1,71 @@
+/* static/css/styles.css */
+
+body {
+    padding-top: 10px; /* Ensure content is not hidden under the fixed navbar */
+    margin: 0;
+    background-color: #f8f9fa; /* Light gray background color */
+}
+
+.transparent-navbar {
+    background-color: rgba(255, 255, 255, 0.8); /* Light mode: semi-transparent white */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.navbar {
+    padding-left: 50px; /* Increase padding on left */
+    padding-right: 50px; /* Increase padding on right */
+}
+
+.navbar-brand {
+    color: #000; /* Set the navbar text color to black for better readability */
+    font-size: 2rem; /* Increase font size for the navbar brand */
+    font-family: 'Georgia', serif; /* Change font family to something more elegant */
+    font-weight: bold; /* Make the font bold */
+    padding: 10px; /* Add padding for more prominence */
+}
+
+.navbar-nav {
+    justify-content: center; /* Center-align navbar items */
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-nav .nav-link {
+    color: #000; /* Set the navbar text color to black for better readability */
+    font-size: 1.2rem; /* Increase font size for navbar links */
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #555; /* Darker color on hover */
+}
+
+.main-content {
+    max-width: 1000px; /* Increase maximum width for content */
+    margin: 0 auto; /* Center the content */
+    padding: 20px; /* Add padding inside the main content area */
+}
+
+h2 {
+    margin-top: 40px; /* Increase margin top for section headings */
+    font-weight: bold; /* Make section headings stand out */
+}
+
+p {
+    font-size: 1.1rem; /* Increase font size of paragraphs */
+    text-align: justify; /* Make text justified for better readability */
+    line-height: 1.7; /* Improve line spacing */
+}
+
+/* Toggle button styles */
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1); /* Light border color for the button */
+    background-color: #007bff; /* Solid blue background color */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 5px 10px; /* Padding to make the button more prominent */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* Custom icon for better visibility against the blue background */
+}

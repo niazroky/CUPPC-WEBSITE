@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 50px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .details {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Online Registration Copy</h2>
+            <h3>University of Chittagong</h3>
+            <h3>Deparment of Physics</h3>
+        </div>
+        <div class="details">
+            <p><strong>Full Name:</strong> {{ registration.full_name }}</p>
+            <p><strong>Student ID:</strong> {{ registration.student_id }}</p>
+            <p><strong>Phone Number:</strong> {{ registration.phone_number }}</p>
+            <p><strong>Session:</strong> {{ registration.session }}</p>
+            <p><strong>Bank Payment Status:</strong> {{ registration.bank_payment_status }}</p>
+            <p><strong>Bank Slip Serial Number:</strong> {{ registration.bank_slip_serial_number }}</p>
+            <p><strong>Payment Date:</strong> {{ registration.payment_date }}</p>
+            <p><strong>Student Status:</strong> {{ registration.student_status }}</p>
+            <p><strong>Selected Courses:</strong> 
+                {% for course in registration.courses.all %}
+                    {{ course.name }}{% if not forloop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dept. Services Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top transparent-navbar">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="{% url 'home' %}">CUPPC</a>
+        </div>
+    </nav>
+    <div class="container mt-5 pt-5 main-content">
+        <h1>CUPPC Serves Our Beloved Physics Department</h1>
+        <br>
+        <h3>Fill Up Your Registration Form for the Final Exam</h3>
+        <br>
+        {% if user.is_authenticated %}
+            <p>Hello, {{ user.username }}!</p>
+            <a href="{% url 'logout' %}">Logout</a>
+
+            {% if user.is_student %}
+                <h3>Student Portal</h3>
+                <ul>
+                    <li><a href="{% url 'register_exam' %}">Register for Final Exam</a></li>
+                    {% if request.session.registration_id %}
+                        <li><a href="{% url 'download_registration_details' request.session.registration_id %}">Download Registration Details</a></li>
+                    {% endif %}
+                </ul>
+            {% elif user.is_teacher %}
+                <h3>Teacher Portal</h3>
+                <ul>
+                    <li><a href="{% url 'dashboard' %}">View Dashboard</a></li>
+                </ul>
+            {% endif %}
+        {% else %}
+            <p>You are not logged in.</p>
+            <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

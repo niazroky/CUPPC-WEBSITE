@@ -1,0 +1,69 @@
+<!-- exam_registration/templates/exam_registration/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Teachers's Dashboard</h2>
+        <br>
+        <br>
+        <h5>Recent Registrations:</h5> 
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Student ID</th>
+                    <th>Phone Number</th>
+                    <th>Session</th>
+                    <th>Bank Payment Status</th>
+                    <th>Student Status</th>
+                    <th>Selected Courses</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for registration in registrations %}
+                <tr>
+                    <td>{{ registration.full_name }}</td>
+                    <td>{{ registration.student_id }}</td>
+                    <td>{{ registration.phone_number }}</td>
+                    <td>{{ registration.session }}</td>
+                    <td>{{ registration.bank_payment_status }}</td>
+                    <td>{{ registration.student_status }}</td>
+                    <td><p><strong></strong> 
+                        {% for course in registration.courses.all %}
+                            {{ course.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+        <br>
+        <br>
+        <br>
+        <h5>Registration Summary:</h5>
+        <br>
+        <ul>
+            <li>Total Students: {{ summary.total_students }}</li>
+            <li>Total Regular Students: {{ summary.total_regular_students }}</li>
+            <li>Total Improvement Students: {{ summary.total_improvement_students }}</li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <h4>Total Students Attending Each Course:</h4>
+        <br>
+        <ul>
+            {% for course, count in summary.course_counts.items %}
+            <li>{{ course }}: {{ count }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

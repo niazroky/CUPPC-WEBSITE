@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUPPC Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand-lg fixed-top transparent-navbar">
+        <div class="container">
+            <a class="navbar-brand mx-auto" href="{% url 'home' %}">CUPPC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#join-club">Join Club</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#members">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="{% url 'dept_services_home' %}">Dept. Services</a>
+                    </li>                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-5 main-content">
+
+        <!-- About Section -->
+        <div id="about" class="mt-5">
+            <h2>About CUPPC</h2>
+            <p>CUPPC stands for Chittagong University Physics Programming Club. As the name suggests, our goal is to integrate computer programming with the study of physics.</p>
+        
+            <p>In today's world, simply reading physics books isn't enough to become a great physicist. Programming plays a crucial role in accessing and utilizing various technological resources that can enhance your understanding of physics. We have observed a significant gap between technology and physics in our department. To bridge this gap, we established CUPPC.</p>
+        
+            <p>Our club aims to:</p>
+            <ul>
+                <li>Assist teachers with their research endeavors by leveraging programming skills.</li>
+                <li>Engage students in meaningful research projects that blend physics and programming.</li>
+                <li>Organize workshops, seminars, and collaborative projects to foster innovation and academic growth.</li>
+            </ul>
+            <p>Join us at CUPPC as we bridge the gap between technology and physics, empowering students to contribute to research and advance their understanding through practical application.</p>
+        </div>
+        
+        <!-- Join Club -->
+        <div id="join-club" class="mt-5">
+            <h2>Join the Club</h2>
+            <p>How to join CUPPC...</p>
+        </div>
+
+        <!-- Members -->
+        <div id="members" class="mt-5">
+            <h2>Members</h2>
+            <p>Our members...</p>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
