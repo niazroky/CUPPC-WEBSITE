@@ -9,7 +9,7 @@ This repository contains a Django-based web application for CUPPC (Chittagong Un
 - **User Authentication:** Allows students and teachers to register and log in securely.
 - **Exam Registration:** Students can register for exams by filling out a form.
 - **Downloadable Registration Details**: Generates downloadable HTML documents with registration information.
-- **Dashboard for Teachers** Interactive dashboard for the teachers to see the registration summary and many more.
+- **Dashboard for Teachers:** Interactive dashboard for the teachers to see the registration summary and many more.
 
 
 ## Project Structure
@@ -44,8 +44,8 @@ python -m venv venv
   source venv/bin/activate
   ```
 
-4. Install dependencies:
-pip install -r requirements.txt
+4. Install dependencies:``` pip install -r requirements.txt ```
+
 
 5. Apply migrations:
 python manage.py migrate
@@ -64,7 +64,7 @@ python manage.py runserver
 - **Bootstrap**: Front-end framework for responsive design.
 - **SQLite**: Default database engine used by Django.
 
-## Contributors
+## Contributor
 
 - [Md. Niazul Islam Roky](https://github.com/niazroky)
 
